@@ -32,6 +32,16 @@ local Toggle = Section.Component("Toggle","Farm money",function(t)
     end
 end,false)
 
+local Toggle = Section.Component("Toggle","Auto Equip Money",function(t)
+    _G.euipmoney = (t)
+    while _G.euipmoney do wait()
+    pcall(function()
+    Weapon = "Money"
+    game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))
+    end)
+    end
+end,false)
+
 local Button = Section.Component("Button","HOP SERVER",function()
             local PlaceID = game.PlaceId
     local AllIDs = {}
