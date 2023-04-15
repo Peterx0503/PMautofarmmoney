@@ -42,6 +42,15 @@ local Toggle = Section.Component("Toggle","Auto Equip Money",function(t)
     end
 end,false)
 
+local Button = Section.Component("Button","Noclip if can't get moeny",function()
+    noclip = true
+    game:GetService('RunService').Stepped:connect(function()
+    if noclip then
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+    end
+    end)
+end)
+
 local Button = Section.Component("Button","HOP SERVER",function()
             local PlaceID = game.PlaceId
     local AllIDs = {}
